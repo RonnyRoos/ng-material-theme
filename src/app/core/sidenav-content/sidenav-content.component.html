@@ -1,0 +1,11 @@
+<mat-toolbar>Sidenav content</mat-toolbar>
+<mat-nav-list>
+
+  <mat-list-item [activated]="habits.isActive" #habits="routerLinkActive" routerLinkActive="active">
+    <a routerLink="/habits">Habits</a>
+  </mat-list-item>
+
+  <mat-list-item [activated]="test.isActive" #test="routerLinkActive" routerLinkActive="active">
+    <a routerLink="/test">Test Stuff</a>
+  </mat-list-item>
+</mat-nav-list>

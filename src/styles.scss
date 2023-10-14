@@ -1,0 +1,36 @@
+@use "@angular/material" as mat;
+
+//@import "@angular/material/prebuilt-themes/purple-green.css";
+
+@use "./app/core/sidenav-content/sidenav-content.component-theme" as sidenav-content;
+
+
+
+@include mat.core();
+
+$my-app-primary: mat.define-palette(mat.$indigo-palette);
+$my-app-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+$my-app-warn: mat.define-palette(mat.$red-palette);
+
+$my-app-theme: mat.define-dark-theme(
+    (
+      color: (
+        primary: $my-app-primary,
+        accent: $my-app-accent,
+        warn: $my-app-warn,
+      ),
+    )
+);
+
+@include mat.all-component-themes($my-app-theme);
+
+@include sidenav-content.color($my-app-theme);
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}

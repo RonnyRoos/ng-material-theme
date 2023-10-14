@@ -1,0 +1,15 @@
+<h1>
+  Habits
+  <button
+    type="button"
+    (click)="addHabit()"
+    aria-label="Add habit"
+    mat-icon-button>
+    <mat-icon aria-label="Add habit">add</mat-icon>
+  </button>
+</h1>
+<app-list
+  [habits$]="habits$"
+  (updateHabitEventEmitter)="updateHabit($event)"
+  (deleteHabitEventEmitter)="deleteHabit($event)"
+></app-list>
